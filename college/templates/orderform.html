@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% include 'navbar.html' %}
+
+<div class="form-container order_form">
+    <h3 class="text-center">Order Form</h3>
+    <form method="POST" >
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-4"> {{form.name | as_crispy_field}} </div>
+            <div class="col-4"> {{form.dob | as_crispy_field}} </div>
+            <div class="col-4"> {{form.age | as_crispy_field}} </div>
+        </div>
+        <div class="row">
+            <div class="col-4"> {{form.gender | as_crispy_field}} </div>
+            <div class="col-4"> {{form.mail_id | as_crispy_field}} </div>
+            <div class="col-4"> {{form.phone_number | as_crispy_field}} </div>
+        </div>
+        <div class="row">
+            <div class="col-4"> {{form.department | as_crispy_field}} </div>
+            <div class="col-4"> {{form.course | as_crispy_field}} </div>
+            <div class="col-4"> {{form.purpose | as_crispy_field}} </div>
+        </div>
+        <div class="row">
+                <div class="col-4 "> {{form.address | as_crispy_field}} </div>
+                <div class="col-4 "> {{form.materials_provide | as_crispy_field}} </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary mt-3" style="width:90px;">Submit</button>
+            <a href="{% url 'authentication:logout' %}" class="btn btn-dark ms-2 mt-3" style="width:90px;">Logout</a>
+        </div>
+    </form>
+</div>
+
+{% if messages %}
+<div >
+    {% for msg in messages %}
+     {% if msg.tags == 'success' %}
+    <div class="alert alert-success text-center" role="alert">
+        {{msg}}<br>
+        <a style="color:violet;" class="btn" href="{% url 'store:home' %}">Go to Home Page</a>
+    </div>
+    {% else %}
+    <div class="alert alert-warning text-center" role="alert">
+    {{msg}}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

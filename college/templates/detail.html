@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+{% include 'navbar.html' %}
+
+<div class="temp_btn text-center">
+    <p>Are you want to enter the form details</p>
+    <a href="{% url 'store:details' %}" class="btn btn-success">Yes</a>
+</div>
+
+{% endblock %}

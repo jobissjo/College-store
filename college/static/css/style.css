@@ -1,0 +1,56 @@
+.btn-color{
+  background-color: #0e1c36;
+  color: #ddd;
+
+}
+
+.profile-image-pic{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+/*
+input{
+text-align: center;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder {
+  text-align: center;
+}
+*/
+
+.cardbody-color{
+  background-color: #ebf2fa;
+}
+
+a{
+  text-decoration: none;
+}
+.order_form input{
+text-align:left;
+}
+.order_form{
+padding:10px;
+}
+.row{
+margin-left: 0;
+margin-right: 0;
+}
+.banner-container img{
+    width: 100%;
+    height: auto;
+}
+.body-container{
+    width: 100%;
+}
+/*
+.body-container{
+    min-height: 40vh;
+}
+*/
+.my_div{
+min-height:90vh;
+}
